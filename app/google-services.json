@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "210491302958",
+    "firebase_url": "https://gtm-test-585ac.firebaseio.com",
+    "project_id": "gtm-test-585ac",
+    "storage_bucket": "gtm-test-585ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210491302958:android:509d1876ece5b19685ebbf",
+        "android_client_info": {
+          "package_name": "com.sanjeev.gtmtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210491302958-t4btvr4q5or00gv81cfiahkasa08ktf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUqNKXh0lAcBo1NFh7R8uMhWAu24GUDXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210491302958-t4btvr4q5or00gv81cfiahkasa08ktf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

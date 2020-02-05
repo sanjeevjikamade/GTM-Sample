@@ -1,0 +1,212 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-02-05 18:56:39",
+    "containerVersion": {
+        "path": "accounts/6000511076/containers/30557406/versions/2",
+        "accountId": "6000511076",
+        "containerId": "30557406",
+        "containerVersionId": "2",
+        "name": "GTM Android",
+        "description": "GTM",
+        "container": {
+            "path": "accounts/6000511076/containers/30557406",
+            "accountId": "6000511076",
+            "containerId": "30557406",
+            "name": "GTM Android",
+            "publicId": "GTM-PQQFWJ3",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1580927848266",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6000511076/containers/30557406/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "tagId": "3",
+                "name": "Google Analytics (Firebase)",
+                "type": "fm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "overrideEventName",
+                        "value": "{{Event Name}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "action",
+                        "value": "filter"
+                    }
+                ],
+                "fingerprint": "1580928123284",
+                "firingTriggerId": [
+                    "2147479556"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "tagId": "5",
+                "name": "Google Analytics Universal Analytics",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_SCREENVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google Analytics Settings}}"
+                    }
+                ],
+                "fingerprint": "1580928230830",
+                "firingTriggerId": [
+                    "2147479556"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "tagId": "7",
+                "name": "firebase_android",
+                "type": "fm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "mergeEventParameters",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "editParamTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "editParamKey",
+                                        "value": "clicked"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "editParamValue",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "action",
+                        "value": "measure"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "button_tap_open_wv"
+                    }
+                ],
+                "fingerprint": "1580928807851",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "triggerId": "6",
+                "name": "Button_tap",
+                "type": "ALWAYS",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event Name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "button_tap"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1580928734483"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "variableId": "4",
+                "name": "Google Analytics Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "collectAdid",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "{{App ID}}"
+                    }
+                ],
+                "fingerprint": "1580928226291"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "type": "APP_VERSION_NAME",
+                "name": "App Version Name"
+            },
+            {
+                "accountId": "6000511076",
+                "containerId": "30557406",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1580928930854",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6000511076/containers/30557406/versions/2?apiLink=version"
+    }
+}
