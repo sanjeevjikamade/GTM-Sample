@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        mFirebaseAnalytics.setUserProperty("custID","GTM_sanjeev");
+        mFirebaseAnalytics.setUserProperty("custID","GTMsanjeev");
 
 
         Button btnLaunchWV = findViewById(R.id.btnLaunchWV);
@@ -41,7 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     void logFBEvent(){
         Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "button_tap_open_wv");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "buttontapopenwv");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 }
+
+
+git add assets/containers/gtm-pqqfwj3_v2.json
+        git add java/com/sanjeev/gtmtest/MainActivity.java
+        git add java/com/sanjeev/gtmtest/WebViewActivity.java

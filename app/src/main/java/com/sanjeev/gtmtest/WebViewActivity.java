@@ -10,9 +10,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -20,7 +23,7 @@ public class WebViewActivity extends AppCompatActivity {
 
     WebView wv;
 
-    String url="https://thebinary.tech/";
+    String url="https://thebinary.tech/?page_id=159";
 
 
     @Override
@@ -73,6 +76,17 @@ public class WebViewActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
 
+        }
+
+        @Override
+        public void onLoadResource(WebView view, String url) {
+            Log.d("", "onLoadResource::"+url);
+
+            if(url.toString().contains("www.googletagmanager.com")){
+                String url1 = url.replace("https://www.googletagmanager.com/ns.html?id=","");
+                Toast.makeText(WebViewActivity.this, "ID::"+url1, Toast.LENGTH_LONG).show();
+            }
+            super.onLoadResource(view, url);
         }
 
         @Override
