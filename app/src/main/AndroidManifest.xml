@@ -30,7 +30,8 @@
         </receiver>
 
 
-        <activity android:name=".SuccessPageActivity"/>
+        <activity android:name=".SuccessPageActivity"
+            android:label="@string/success_page_lable"/>
         <activity
             android:name=".WebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

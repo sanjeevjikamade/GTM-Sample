@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">GTM_Demo</string>
+    <string name="app_name">GTM Demo</string>
 
-    <string name="title_activity_web_view">GTM Demo</string>
+    <string name="title_activity_web_view">Page 2 - Web View</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="success_page_lable">Page 3 - 2nd Native View</string>
+    <string name="first_native_page_lable">Page 1 - 1st Native View</string>
 </resources>

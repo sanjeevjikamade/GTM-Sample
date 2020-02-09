@@ -3,6 +3,7 @@ package com.sanjeev.gtmtest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
@@ -20,10 +21,11 @@ import android.widget.Toast;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class WebViewActivity extends AppCompatActivity {
-
+    int flag = 0;
     WebView wv;
 
     String url="https://thebinary.tech/?page_id=159";
+    String uid;
 
 
     @Override
@@ -31,6 +33,8 @@ public class WebViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_web_view);
+
+        uid = getIntent().getStringExtra("uid");
 
         wv=(WebView)findViewById(R.id.wvContent);
 
@@ -82,9 +86,20 @@ public class WebViewActivity extends AppCompatActivity {
         public void onLoadResource(WebView view, String url) {
             Log.d("", "onLoadResource::"+url);
 
+
+
             if(url.toString().contains("www.googletagmanager.com")){
-                String url1 = url.replace("https://www.googletagmanager.com/ns.html?id=","");
-                Toast.makeText(WebViewActivity.this, "ID::"+url1, Toast.LENGTH_LONG).show();
+
+                if(flag>0) {
+                    String url1 = url.replace("https://www.googletagmanager.com/ns.html?id=", "");
+
+                    Intent i = new Intent(WebViewActivity.this, SuccessPageActivity.class);
+                    i.putExtra("tag_id", url1);
+                    i.putExtra("uid", uid);
+                    startActivity(i);
+                    finish();
+                }
+                flag++;
             }
             super.onLoadResource(view, url);
         }
@@ -94,9 +109,7 @@ public class WebViewActivity extends AppCompatActivity {
             handler.proceed();
             // Ignore SSL certificate errors
         }
-
     }
-
 
 
     public class AnalyticsWebInterface {

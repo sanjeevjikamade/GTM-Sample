@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAnalytics mFirebaseAnalytics;
+    String userId = "UID123456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        mFirebaseAnalytics.setUserProperty("custID","GTMsanjeev");
+        mFirebaseAnalytics.setUserProperty("custID",userId);
+
+        TextView tvUID = findViewById(R.id.tv_uid);
+        tvUID.setText("value: "+userId);
 
 
         Button btnLaunchWV = findViewById(R.id.btnLaunchWV);
@@ -31,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 logFBEvent();
 
                 Intent i = new Intent(MainActivity.this, WebViewActivity.class);
+                i.putExtra("uid", userId);
                 startActivity(i);
-               // finish();
+
+                finish();
 
             }
         });
@@ -45,8 +52,3 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 }
-
-
-git add assets/containers/gtm-pqqfwj3_v2.json
-        git add java/com/sanjeev/gtmtest/MainActivity.java
-        git add java/com/sanjeev/gtmtest/WebViewActivity.java
